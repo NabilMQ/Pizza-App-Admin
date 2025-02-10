@@ -11,6 +11,7 @@ import 'package:pizza_app_admin/src/components/my_text_field.dart';
 import 'package:pizza_app_admin/src/modules/create_pizza/blocs/create_pizza_bloc/create_pizza_bloc.dart';
 import 'package:pizza_app_admin/src/modules/create_pizza/blocs/upload_photo_bloc/upload_photo_bloc.dart';
 import 'package:pizza_repository/pizza_repository.dart';
+import 'package:uuid/uuid.dart';
 
 class CreatePizzaScreen extends StatefulWidget {
   const CreatePizzaScreen({super.key});
@@ -39,6 +40,7 @@ class _CreatePizzaScreenState extends State<CreatePizzaScreen> {
   void initState() {
     super.initState();
     pizza = Pizza.empty;
+    pizza.pizzaId = Uuid().v1();
   }
 
   @override
